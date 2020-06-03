@@ -1,6 +1,7 @@
 <h1>Page 2</h1>
 <p>This is the second page in the site.</p>
-<button style="color:green" (click)="onButtonClick()">click me!</button>
+<p>This page has been visited {{hitCount}} times</p>
+<button style="color:green" (click)="incrementHitCounter()">Hit me! (hits: {{hitCount}})</button>
 <p>Maecenas nec condimentum tellus, ac rhoncus odio. Etiam porta, nulla vel condimentum sodales, est lacus vehicula
   lacus, vitae euismod eros nisl quis mauris. Praesent fringilla lacus eu justo luctus, vel bibendum lorem lacinia.
   Morbi quis lectus vehicula, tempus erat congue, pharetra risus. Nullam at posuere purus. Aliquam lobortis elit

@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page2.component.css']
 })
 export class Page2Component implements OnInit {
-  pageName: String = 'page2';
+  pageName: string = 'page2';
+
+  hitCount: number = 0;
 
   constructor() { }
 
@@ -15,6 +17,10 @@ export class Page2Component implements OnInit {
 
   onButtonClick(): void {
     alert(this.pageName);
+  }
+
+  incrementHitCounter(): void {
+    this.hitCount += 1;
   }
 
 }

@@ -1,7 +1,12 @@
-<app-header #headerComponent></app-header>
+<!-- accessing pageChangedEvent emitted variable using $event-->
+<!-- template references are referred to with '#'-->
+<app-header #header (pageChangedEvent)="incrementHitCounter($event)"></app-header>
 <!-- all strucural directives contain '*' before their name -->
 <!-- all other directives use [] ie: [hidden] -->
-<app-page1 *ngIf="headerComponent.pageRequest === 1"></app-page1>
-<app-page2 *ngIf="headerComponent.pageRequest === 2"></app-page2>
-<app-page3 *ngIf="headerComponent.pageRequest === 3"></app-page3>
-<app-footer></app-footer>
+<!-- rule of thumb: if you are using a template reference, do NOT use ngif
+     on the same object because it may not always exist. For this purpose, we are using [hidden]-->
+<app-page1 #page1 [hidden]="header.pageRequest !== 1"></app-page1>
+<app-page2 #page2 [hidden]="header.pageRequest !== 2"></app-page2>
+<app-page3 #page3 [hidden]="header.pageRequest !== 3"></app-page3>
+<app-footer #footer [lastAccessed]="startTime"></app-footer>
+<button (click)="updateLastAccessed()">Update last accessed</button>
